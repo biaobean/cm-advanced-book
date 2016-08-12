@@ -6,5 +6,5 @@
 * [黑洞](hei_dong.md)
 * 如何初始化CM数据库
 * [如何修改JAVA路径](java_path.md)
-* [如何后台修改CM](chang'e_cm.md)
+* [如何后台修改CM](changecm_md_port.md)
 
