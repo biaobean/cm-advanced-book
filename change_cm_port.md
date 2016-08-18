@@ -11,3 +11,14 @@ curl -X PUT -H "Content-Type:application/json" -u <用户名>:<密码> -d '{ "it
 ```
 curl -X PUT -H "Content-Type:application/json" -u admin:admin -d '{ "items": [ { "name": "http_port", "value": "8198" } ] }' 'http://localhost:7180/api/v8/cm/config'
 ```
+
+PS，另外一个不需要修改端口的方式是在访问Web页面时使用使用ssh tunel等方式：
+```
+ssh -Nfl <ip>:<new port>:<ip>:7180 <user>@<ip>
+```
+
+比如：
+
+```
+ssh -Nfl 10.255.255.15:7555:10.255.255.15:7180 root@10.255.255.15
+```
