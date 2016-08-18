@@ -20,6 +20,7 @@ hbase zkcli
 rmr /hbase
 ```
 4.	修改zookeeper服务的配置，将security禁用
+
 ![](image/disable_kerberos/1.png)
 
 5.	修改HBase服务的配置，禁用security和授权
