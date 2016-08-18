@@ -5,9 +5,11 @@
 
 ## 节点服务器Agent配置
 
+本节所有路径皆为通过rpm包方式安装的缺省路径。
+
 【步骤1】编辑agent服务config.ini配置
 
-如果通过rpm包方式安装，路径为*/etc/cloudera-scm-agent/config.ini*。
+文件路径为*/etc/cloudera-scm-agent/config.ini*。
 
 1.1 修改CM的hostname：
 
@@ -41,11 +43,17 @@ cdh_zookeeper_home=/opt/boh-2.0.0/core/zookeeper
 
 2.1 修改JAVA_HOME
 
+有两种方式，建议使用方式一：
+
+方法一：
+修改*/usr/lib64/cmf/service/common/cloudera-config.sh*文件，在文件开始加入**JAVA_HOME**声明，比如：
+
 ```
-cd /opt/cm-5.1.3/lib64/cmf/service
+export JAVA_HOME=/usr/java/jdk1.7.0_79
 ```
 
-依次进入对应组件的目录，修改以下文件hdfs.sh、yarn.sh、zkserver.sh、hive.sh、hbase.sh。
+方法二：
+依次进入*/usr/lib64/cmf/service/*下对应组件的目录，修改以下文件hdfs.sh、yarn.sh、zkserver.sh、hive.sh、hbase.sh，修改JAVA_HOME调用：
 
 ```
 # attempt to find java
@@ -53,15 +61,57 @@ cd /opt/cm-5.1.3/lib64/cmf/service
 export JAVA_HOME=/usr/java/jdk1.7.0_79 //添加该行
 ```
 
-2.2 hbase.sh需要修改**HBASE_BIN**路径
+2.2 修改**HBASE_BIN**路径
+
+假设hbase命令的路径为*/opt/boh-2.0.0/core/hbase/bin*。有两种方式修改，建议使用方式一：
+
+方法一：
+修改*/usr/lib64/cmf/service/common/cloudera-config.sh*文件中
+函数locate_hbase_script()实现：
+
+原有内容：
+
+```
+# Sets the path to the HBase script in HBASE_BIN.
+locate_hbase_script() {
+  if [ "$CDH_VERSION" -ge "5" ]; then
+    # CDH-13250 use bigtop script to start hbase
+    # Disable sourcing defaults dir, which CM will manage instead.
+    export BIGTOP_DEFAULTS_DIR=""
+    HBASE_BIN="$HBASE_HOME/../../bin/hbase"
+  else
+    HBASE_BIN="$HBASE_HOME/bin/hbase"
+  fi
+}
+```
+
+更改为：
+
+```
+locate_hbase_script() {
+    export HBASE_BIN="/opt/boh-2.0.0/core/hbase/bin"
+}
+```
+
+方法二：
+在*/usr/lib64/cmf/service/hbase/hbase.sh*文件中替换*locate_hbase_script*调用：（**注意一定要注释掉locate_hbase_script调用**）
+
+原有内容：
+```
+locate_hbase_script
+```
+
+更改为：
 
 ```
 #locate_hbase_script
-export HBASE_BIN=/opt/boh-2.0.0/core/hbase/bin/
+export HBASE_BIN=/opt/boh-2.0.0/core/hbase/bin
 ```
 
-2.3	分发修改后的/opt/cm-5.1.3
 
+【步骤3】分发修改后的配置文件到所有节点
+
+/opt/cm-5.1.3
 ```
 for i in `cat ~/ip`
 do
@@ -69,28 +119,30 @@ scp -rp /opt/cm-5.1.3 $i:/opt &
 done
 ```
 
-注：/opt目录hadoop用户需要有写的权限
+注：/opt目录用户需要有写的权限
 
-2.4	修改所有节点的系统配置
+【步骤4】修改所有节点的系统配置
 
 ```
 echo never > /sys/kernel/mm/transparent_hugepage/defrag
 ```
 
-2.5	在所有节点添加cloudera-scm用户
+【步骤5】在所有节点添加cloudera-scm用户
 
 ```
-useradd --system --home=/opt/cm-5.1.3/run/cloudera-scm-server/ --no-create-home --shell=/bin/false --comment "Cloudera SCM User" cloudera-scm
+useradd --system --home=/var/lib/cloudera-scm-server --no-create-home --shell=/bin/false --comment "Cloudera SCM User" cloudera-scm
 ```
 
-2.6	在所有节点安装jdk-7u79-linux-x64.rpm
+其中，如果非rpm方式安装，可能需要修改home目录。
+
+【步骤6】在所有节点安装JDK
 
 ```
 yum remove `rpm -qa |grep java*` -y
 rpm -ivh /home/hadoop/jdk-7u79-linux-x64.rpm
 ```
 
-2.7	在所有节点配置mysql库jdbc包
+【步骤7】（可选）在所有节点配置mysql库jdbc包
 
 ```
 cd /usr/share/java
@@ -98,7 +150,7 @@ cp /home/hadoop/mysql-connector-java-5.1.29.jar ./
 ln -s mysql-connector-java-5.1.29.jar mysql-connector-java.jar
 ```
 
-2.8	启动所有节点agent服务，在页面检查主机状态
+【步骤8】启动所有节点agent服务，在页面检查主机状态
 
 ```
 /opt/cm-5.1.3/etc/init.d/cloudera-scm-agent start
