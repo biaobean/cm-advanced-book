@@ -7,9 +7,7 @@
 
 【步骤1】编辑agent服务config.ini配置
 
-```
-vi /opt/cm-5.1.3/etc/cloudera-scm-agent/config.ini
-```
+如果通过rpm包方式安装，路径为*/etc/cloudera-scm-agent/config.ini*。
 
 1.1 修改CM的hostname：
 
@@ -18,7 +16,9 @@ vi /opt/cm-5.1.3/etc/cloudera-scm-agent/config.ini
 server_host=zchadoop218
 ```
 
-1.2 修改agent监听服务端口：
+如果CM的监听端口非默认7182，还需修改*server_port*参数。
+
+1.2 （可选）如果默认9000端口不可用，可修改agent监听服务端口：
 
 ```
 listening_port=9900
