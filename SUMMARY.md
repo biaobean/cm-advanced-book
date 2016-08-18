@@ -7,4 +7,5 @@
 * 如何初始化CM数据库
 * [如何修改JAVA路径](java_path.md)
 * [如何后台修改CM端口](change_cm_port.md)
+* 如何取消Kerberos
 
