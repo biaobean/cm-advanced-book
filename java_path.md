@@ -2,6 +2,12 @@
 
 脚本修改：
 
+修改*/usr/lib64/cmf/service/common/cloudera-config.sh*文件，在文件头加入**JAVA_HOME**声明，比如：
+
+```
+export JAVA_HOME=/usr/java/jdk1.7.0_79
+```
+
 或者在CM界面修改，
 
 1. 打开Cloudera Manager管理界面
