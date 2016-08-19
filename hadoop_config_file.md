@@ -32,7 +32,7 @@ http://cm_server_host:7180/api/v13/clusters/Cluster%201/services/OOZIE-1/roles/O
 
 ### 获取当前正在使用的配置文件
 
-1. 登录角色服务器，查询相应的服务进程号
+1. 登录角色服务器，查询相应的服务进程号，比如：
 ```
 ps -elf | grep java
 ```
