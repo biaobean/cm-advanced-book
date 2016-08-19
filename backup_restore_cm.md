@@ -1,7 +1,9 @@
 # 如何备份和恢复CM配置
 
-You can use the Cloudera Manager REST API to export and import all of its configuration data. The API exports a JSON document that contains configuration data for the Cloudera Manager instance. You can use this JSON document to back up and restore a Cloudera Manager deployment.
 ## 使用CM API
+
+可以使用CM的REST API来导出和导入所有配置数据。API导出的是一个JSON文件，里面包含了所有CM里管理的实例的配置数据。可以直接将这个JSON文件导入CM，从而恢复CM的部署。
+
 ### 备份配置
 Minimum Required Role: Cluster Administrator (also provided by Full Administrator)
 
