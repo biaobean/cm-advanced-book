@@ -10,4 +10,5 @@
 * [如何取消Kerberos](disable_kerberos.md)
 * [如何监控Impala任务状态](monitor_impala.md)
 * [使用CM API](cm_api.md)
+* 如何获取角色Hadoop
 
