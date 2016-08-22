@@ -42,4 +42,13 @@ ps -elf | grep java
 ## 获取客户端配置
 ### 通过API
 ### 本地查找
-在缺省目录，如果通过parcel方式安装，路径在*/opt/cloudera/parcels/CDH/lib*相应目录下，如HDFS的配置文件目录为*/opt/cloudera/parcels/CDH/lib/hadoop/etc/hadoop*。
+缺省目录*/etc/hadoop/conf*。
+
+如果通过parcel方式安装，相关软链接路径在*/opt/cloudera/parcels/CDH/lib*相应目录下，保证与开源Hadoop脚本结构相同，如HDFS的配置文件目录为*/opt/cloudera/parcels/CDH/lib/hadoop/etc/hadoop*，其执行时的调用链为：
+
+```
+/usr/bin/hadoop
+--> /opt/cloudera/parcels/CDH/bin/hadoop
+    --> /opt/cloudera/parcels/CDH/lib/hadoop-config.sh
+        --> /opt/cloudera/parcels/CDH/lib/hadoop/etc/hadoop
+```
