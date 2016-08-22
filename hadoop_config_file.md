@@ -42,7 +42,16 @@ ps -elf | grep java
 ## 获取客户端配置
 ### 通过API
 ### 本地查找
-缺省目录*/etc/hadoop/conf*。
+缺省目录在/etc/[component]/conf下，例如：
+
+| 组件 | 标准路径 | 实际路径 |
+| -- | -- | -- |
+| hadoop | */etc/hadoop/conf* | */etc/alternatives/hadoop-conf* |
+| hbase | */etc/hbase/conf* | */etc/alternatives/hbase-conf* |
+| hive | */etc/hive/conf* | */etc/alternatives/hive-conf* |
+| spark | */etc/spark/conf* | */etc/alternatives/spark-conf* |
+| zookeeper | */etc/zookeeper/conf* | */etc/alternatives/zookeeper-conf* |
+| impala | */etc/impala/conf* | */etc/alternatives/impala-conf* |
 
 如果通过parcel方式安装，相关软链接路径在*/opt/cloudera/parcels/CDH/lib*相应目录下，保证与开源Hadoop脚本结构相同，如HDFS的配置文件目录为*/opt/cloudera/parcels/CDH/lib/hadoop/etc/hadoop*，其执行时的调用链为：
 
