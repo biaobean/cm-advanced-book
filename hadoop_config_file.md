@@ -1,4 +1,4 @@
-# 如何获取角色Hadoop配置文件
+# 如何获取Hadoop配置文件
 
 Hadoop使用xml等文件做配置，但在被CM接管集群以后，文件内容也由CM动态控制。但由于历史或调试等原因，可能需要查看具体Hadoop真实使用的xml配置文件的内容，可以通过以下方式来获得。
 
@@ -42,3 +42,4 @@ ps -elf | grep java
 ## 获取客户端配置
 ### 通过API
 ### 本地查找
+在缺省目录，如果通过parcel方式安装，路径在*/opt/cloudera/parcels/CDH/lib*相应目录下，如HDFS的配置文件目录为*/opt/cloudera/parcels/CDH/lib/hadoop/etc/hadoop*。
