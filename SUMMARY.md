@@ -10,6 +10,6 @@
 * [如何取消Kerberos](disable_kerberos.md)
 * [如何监控Impala任务状态](monitor_impala.md)
 * [使用CM API](cm_api.md)
-* [如何获取角色Hadoop配置文件](hadoop_config_file.md)
+* [如何获取Hadoop配置文件](hadoop_config_file.md)
 * [如何备份和恢复CM配置](backup_restore_cm.md)
 
