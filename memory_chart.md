@@ -2,6 +2,13 @@
 
 缺省的主页页面中不带内存的图表，可以通过在Cloudera Manager顶部的菜单栏“**图表**”->“**图表生成器**”中手工生成然后添加至仪表盘。
 
+比如，可以通过添加“physical_memory_used_across_hosts”查看所有主机的当前物理内存使用情况：
+
+![](image/memory_chart/physical_memory_used.png)
+
+也可添加“physical_memory_used_across_hosts”指标：
+
+![](image/memory_chart/physical_memory_used_across_hosts.png)
 
 其他可以添加的内存相关指标包括：
 
