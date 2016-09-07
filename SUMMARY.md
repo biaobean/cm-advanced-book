@@ -14,4 +14,5 @@
 * [如何备份和恢复CM配置](backup_restore_cm.md)
 * [大规模集群CM部署](1k_node.md)
 * FAQ
+   * 监控
 
