@@ -13,7 +13,7 @@
 * [大规模集群CM部署](1k_node.md)
 * 集成
    * [使用CM API](cm_api.md)
-   * 第三方应用托管
+   * [第三方应用托管](3rd_party.md)
 * FAQ
    * 监控
        * [如何监控Impala任务状态](monitor_impala.md)
