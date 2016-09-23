@@ -10,6 +10,14 @@ API基于Restful风格的HTTP协议，并对其封装成了Java、Python等SDK�
 
 ### Safety Valve
 
+## 常见用法
+
+### 如何用API重启服务进程
+
+参见：
+http://cloudera.github.io/cm_api/apidocs/v13/path__clusters_-clusterName-_services_-serviceName-_roleCommands_restart.html
+
+
 ## 常见问题
 
 
