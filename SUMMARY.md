@@ -12,9 +12,9 @@
 * [如何备份和恢复CM配置](backup_restore_cm.md)
 * [大规模集群CM部署](1k_node.md)
 * 集成
+   * [使用CM API](cm_api.md)
 * FAQ
    * 监控
        * [如何监控Impala任务状态](monitor_impala.md)
        * [如何添加可以查看内存的图表？](memory_chart.md)
-* [使用CM API](cm_api.md)
 
