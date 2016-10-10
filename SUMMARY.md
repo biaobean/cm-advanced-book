@@ -18,4 +18,5 @@
    * 监控
        * [如何监控Impala任务状态](monitor_impala.md)
        * [如何添加可以查看内存的图表？](memory_chart.md)
+* 诊断
 
