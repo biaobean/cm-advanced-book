@@ -1,8 +1,24 @@
 # 修改CM的数据库节点IP
 
-## 步骤
+## 1. 介绍
+本节介绍如何在Cloudera Manager中更新数据库主机的IP信息，操作后除IP地址以外的其他信息，如主机名、节点属性、配置、环境等皆不变，整个过程中无添加或移除节点操作。
 
-### 停止CM服务
+## 2. 操作影响
+操作过程中需要停止Cloudera Manager服务；需要禁止其他用户进行集群操作。
+
+集群服务无需停止。
+
+## 3. 步骤
+###	3.1 停止集群管理服务
+在Cloudera Manager界面，停止集群管理服务
+###	3.2	停止CM Server服务
+在Cloudera Manager节点上，进入命令行执行：
+
+```
+service cloudera-scm-server stop
+```
+
+###	3.3	修改CM的数据库节点IP的db.properties文件
 
 如果CM的数据库编辑CM节点的db.properties文件，替换原IP地址，示例如下：
 
@@ -17,3 +33,14 @@
 com.cloudera.cmf.db.type=mysql
 com.cloudera.cmf.db.host=168.9.2.201 #新IP地址
 ```
+
+### 3.4	启动CM Server服务
+在Cloudera Manager节点上，进入命令行执行：
+
+```
+service cloudera-scm-server start
+```
+
+### 3.5	启动集群管理服务
+在Cloudera Manager界面，启动集群管理服务
+
