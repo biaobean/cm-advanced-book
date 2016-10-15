@@ -9,7 +9,7 @@
 * 配置
    * 主机
        * [如何修改服务器的hostid](modify_hostid.md)
-       * 如何修改主机IP
+       * [如何修改主机IP](modify_ip.md)
    * 环境
        * [如何修改JAVA路径](java_path.md)
        * [如何后台修改CM端口](change_cm_port.md)
