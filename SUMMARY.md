@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
 * [如何在现有Hadoop部署上安装CM](unmanagement_install.md)
-* [如何修改服务器的hostid](modify_hostid.md)
 * [黑洞](hei_dong.md)
 * 如何初始化CM数据库
 * [如何修改JAVA路径](java_path.md)
@@ -13,6 +12,7 @@
 * [大规模集群CM部署](1k_node.md)
 * 配置
    * 主机
+* [如何修改服务器的hostid](modify_hostid.md)
 * 集成
    * [使用CM API](cm_api.md)
    * [第三方应用托管](3rd_party.md)
