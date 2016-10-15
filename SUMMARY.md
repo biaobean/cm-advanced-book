@@ -20,5 +20,5 @@
        * [如何添加可以查看内存的图表？](memory_chart.md)
 * [诊断](diag.md)
    * [如何在线上传诊断包（Diagnositic Bundle）](upload_bundle.md)
-* 配置及修改
+* 配置
 
