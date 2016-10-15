@@ -11,6 +11,8 @@
 * [如何获取Hadoop配置文件](hadoop_config_file.md)
 * [如何备份和恢复CM配置](backup_restore_cm.md)
 * [大规模集群CM部署](1k_node.md)
+* 配置
+   * 主机
 * 集成
    * [使用CM API](cm_api.md)
    * [第三方应用托管](3rd_party.md)
@@ -20,6 +22,4 @@
        * [如何添加可以查看内存的图表？](memory_chart.md)
 * [诊断](diag.md)
    * [如何在线上传诊断包（Diagnositic Bundle）](upload_bundle.md)
-* 配置
-   * 主机
 
