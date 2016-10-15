@@ -21,4 +21,5 @@
 * [诊断](diag.md)
    * [如何在线上传诊断包（Diagnositic Bundle）](upload_bundle.md)
 * 配置
+   * 主机
 
