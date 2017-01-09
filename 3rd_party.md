@@ -1,6 +1,8 @@
 # Cloudera托管服务开发
 
-Cloudera Manager是一个功能强大的工具，用于管理CDH服务和运行它们的集群。通过使用Cloudera Manager扩展机制，可以使用Cloudera Manager来一起同管理CDH服务以及非Cloudera提供的服务，并且为这样的管理服务部署插件和扩展。CM托管服务的开发请参考[CM_ext项目](https://github.com/cloudera/cm_ext)，文档请参见CM扩展功能[Wiki主页](https://github.com/cloudera/cm_ext/wiki)。总体上讲，Cloudera Manager本身涉及管理群集上运行的各种服务的生命周期。这可以被分解为两个主要领域：
+Cloudera Manager是一个功能强大的工具，用于管理CDH服务和运行它们的集群。通过使用Cloudera Manager扩展机制，可以使用Cloudera Manager来一起同管理CDH服务以及非Cloudera提供的服务，并且为这样的管理服务部署插件和扩展。CM托管服务的开发请参考[CM_ext项目](https://github.com/cloudera/cm_ext)，文档请参见CM扩展功能[Wiki主页](https://github.com/cloudera/cm_ext/wiki)。
+
+总体上讲，Cloudera Manager本身涉及管理群集上运行的各种服务的生命周期。这可以被分解为两个主要领域：
 
 1. 管理该服务所需程序/数据文件的部署
 2. 管理和监控这些服务的配置和运行
