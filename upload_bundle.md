@@ -25,3 +25,5 @@ chmod 777 /cloudera-dignostic-bundle
 
 ![](image/upload_bundle/3_3.png)
 
+
+http://www.cloudera.com/documentation/enterprise/5-5-x/topics/cm_ag_data_collection.html#cmug_topic_15_4_2
