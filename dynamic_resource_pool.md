@@ -10,3 +10,5 @@
 
 ![](image/resource_pool/yarn_impala_tab.png)
 
+
+http://archive-primary.cloudera.com/cdh5/cdh/5/hadoop/hadoop-yarn/hadoop-yarn-site/FairScheduler.html
