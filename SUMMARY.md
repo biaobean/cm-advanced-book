@@ -1,12 +1,13 @@
 # Summary
 
 * [Introduction](README.md)
-* 部署
+* [部署](.md)
   * [如何在现有Hadoop部署上安装CM](unmanagement_install.md)
   * [大规模集群CM部署](1k_node.md)
   * 如何初始化CM数据库
   * [如何备份和恢复CM配置](backup_restore_cm.md)
-* 配置
+  * [手工安装Agent](install_agent.md)
+* [配置](.md)
   * 主机
     * [如何修改服务器的hostid](modify_hostid.md)
     * [如何修改主机IP](modify_ip.md)
