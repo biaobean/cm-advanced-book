@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [部署](.md)
+* 部署[部署](.md)
   * [如何在现有Hadoop部署上安装CM](unmanagement_install.md)
   * [大规模集群CM部署](1k_node.md)
   * 如何初始化CM数据库
@@ -19,9 +19,10 @@
     * [如何获取Hadoop配置文件](hadoop_config_file.md)
     * [如何取消Kerberos](disable_kerberos.md)
     * [配置动态资源池](dynamic_resource_pool.md)
-* 监控
+* [监控](.md)
   * [如何监控Impala任务状态](monitor_impala.md)
   * [如何添加可以查看内存的图表？](memory_chart.md)
+  * [HDFS](hdfs.md)
 * [诊断](diag.md)
   * [如何在线上传诊断包（Diagnositic Bundle）](upload_bundle.md)
 * 集成
